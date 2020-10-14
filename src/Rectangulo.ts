@@ -29,12 +29,20 @@ class Rectangulo {
 // La función match compara nuestra cadena con una expresion regular para seleccionar los que deseeamos, en este caso,
 // queremos seleccionar todos los digitos antes del punto (delimitador), solo 2 digitos después del punto (delimitador).
 
-
         let resultado= calculo.toString()
         let decimales = /\d*.\d{0,2}/
         
         return resultado.match(decimales)
 
+    }
+
+    getperi(){
+        let calculo= 2*this.base*this.altura
+
+        let resultado= calculo.toString()
+        let decimales = /\d*.\d{0,2}/
+
+        return resultado.match(decimales)
     }
 }
 
@@ -45,9 +53,12 @@ let r2: Rectangulo
 r1= new Rectangulo(6,5)
 r2= new Rectangulo(10,2)
 
-console.log(`El área del rectangulo 1 es ${r1.getarea()}`)
+console.log(`\n El área del rectangulo 1 es ${r1.getarea()}`)
+console.log(`\n El área del rectangulo 2 es ${r2.getarea()}`)
 
-console.log(`El área del rectangulo 2 es ${r2.getarea()}`)
+console.log(`\n El perimetro del rectangulo 1 es ${r1.getperi()}`)
+console.log(`\n El perimetro del rectangulo 2 es ${r2.getperi()}`)
+
 
 
 

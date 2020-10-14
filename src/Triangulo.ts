@@ -3,14 +3,24 @@
 
 class Triangulo {
     private base:number
+    private lado2:number
+    private lado3:number
     private altura:number
 
-    constructor(base:number,altura:number){
+    constructor(base:number,lado2:number,lado3:number,altura:number){
         this.base= base
+        this.lado2= lado2
+        this.lado3= lado3
         this.altura= altura
     }
     getbase(){
         return this.base
+    }
+    getlado2(){
+        return this.lado2
+    }
+    getlado3(){
+        return this.lado3
     }
     getaltura(){
         return this.altura
@@ -35,17 +45,26 @@ class Triangulo {
 
        return resultado.match(decimales)
     } 
+    getperi(){
+        let calculo= this.base+this.lado2+this.lado3
+        let resultado= calculo.toString()
+
+        let decimales=/\d*.\d{0,2}/
+        return resultado.match(decimales)
+    }
 }
 
 let tr1:Triangulo
 let tr2:Triangulo
 
-tr1= new Triangulo (8,3)
-tr2= new Triangulo (15,6)
+tr1= new Triangulo (8,2,4,3)
+tr2= new Triangulo (15,5,6,9)
 
-console.log(`El área del triangulo 1 es ${tr1.getarea()}`)
+console.log(`\n El área del triangulo 1 es ${tr1.getarea()}`)
+console.log(`\n El área del triangulo 2 es ${tr2.getarea()}`)
 
-console.log(`El área del triangulo 2 es ${tr2.getarea()}`)
+console.log(`\n El perimetro del triangulo 1 es ${tr1.getperi()}`)
+console.log(`\n El perimetro del triangulo 2 es ${tr2.getperi()}`)
 
 
 

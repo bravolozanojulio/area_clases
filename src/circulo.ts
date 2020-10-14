@@ -15,6 +15,8 @@ class Circulo{
 
         let calculo= Math.pow(this.radio,2) * pi
 
+
+
 // A continuación, vamos a convertir el resultado a string con la funcion tostring(), para posteriormente,
 // utilizando la funcion match mostremos los caracteres que nos interesan, y mostraremos los decimales deseados.
 
@@ -33,6 +35,19 @@ class Circulo{
         return resultado.match(decimales)
 
     }
+
+// A continuacion, crearemos el calculo del perimetro, para ello, utilizaremos los pasos anteriores.
+
+    getperi(){
+        let pi= 3.14159
+        let calculo= 2*pi*this.radio
+
+        let resultado= calculo.toString()
+        let decimales=/\d*.\d{0,2}/
+
+        return resultado.match(decimales)
+    }
+
 }
 
 let cir1: Circulo
@@ -41,6 +56,10 @@ let cir2: Circulo
 cir1= new Circulo(9)
 cir2= new Circulo(16.24)
 
-console.log(`El área del circulo 1 es ${cir1.getarea()}`)
-console.log(`El área del circulo 2 es ${cir2.getarea()}`)
+console.log(`\n El área del circulo 1 es ${cir1.getarea()}`)
+console.log(`\n El área del circulo 2 es ${cir2.getarea()}`)
+
+console.log(`\n El perimetro del circulo 1 es ${cir1.getperi()}`)
+console.log(`\n El perimetro del circulo 2 es ${cir2.getperi()}`)
+
 

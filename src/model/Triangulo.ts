@@ -1,32 +1,52 @@
 // Calcular el area de un Triangulo
 
 
-class Triangulo {
+export class Triangulo {
     private base:number
     private lado2:number
     private lado3:number
-    private altura:number
+    private "altura":number
 
-    constructor(base:number,lado2:number,lado3:number,altura:number){
+    constructor(base:number,lado2:number,lado3:number){
         this.base= base
         this.lado2= lado2
         this.lado3= lado3
-        this.altura= altura
+       // Comento la siguiente linea para que no sea obligatorio introducir una altura
+       //this.altura= altura
     }
-    getbase(){
+    getBase(){
         return this.base
     }
-    getlado2(){
+    getLado2(){
         return this.lado2
     }
-    getlado3(){
+    getLado3(){
         return this.lado3
     }
-    getaltura(){
+    getAltura(){
         return this.altura
     }
-    getarea(){
+    set Altura (altura:number){
+
+        // Vamos a realizar un control de errores, en el que si la altura es menor o igual a 0, 
+        // o no es un numero nos devolvera un mensaje de error e interrumpira la ejecucion
+
+
+        // En caso de que la altura sea mayor a 0, el programa definira la altura
+
+        if (altura <= 0 || isNaN(altura)){
+            throw "Altura incorrecta, debe ser mayor o igual que 0"
+        }
+        this.altura = altura
+    }
+
+
+    Area(){
        let calculo= this.base * this.altura / 2
+       if (isNaN(calculo) == true) {
+        throw "El calculo no se ha realizado correctamente"
+       }
+
 
 // A continuación, vamos a convertir el resultado a string con la funcion tostring(), para posteriormente,
 // utilizando la funcion match mostremos los caracteres que nos interesan, y mostraremos los decimales deseados.
@@ -42,29 +62,21 @@ class Triangulo {
 
        let resultado= calculo.toString()
        let decimales=/\d*.\d{0,2}/
-
-       return resultado.match(decimales)
+       return resultado.match(decimales)     
     } 
-    getperi(){
-        let calculo= this.base+this.lado2+this.lado3
-        let resultado= calculo.toString()
 
+    Perimetro(){
+
+        let calculo= this.base+this.lado2+this.lado3
+
+        if (isNaN(calculo) == true) {
+            throw "El calculo no se ha realizado correctamente"
+           }
+        let resultado= calculo.toString()
         let decimales=/\d*.\d{0,2}/
         return resultado.match(decimales)
     }
 }
-
-let tr1:Triangulo
-let tr2:Triangulo
-
-tr1= new Triangulo (8,2,4,3)
-tr2= new Triangulo (15,5,6,9)
-
-console.log(`\n El área del triangulo 1 es ${tr1.getarea()}`)
-console.log(`\n El área del triangulo 2 es ${tr2.getarea()}`)
-
-console.log(`\n El perimetro del triangulo 1 es ${tr1.getperi()}`)
-console.log(`\n El perimetro del triangulo 2 es ${tr2.getperi()}`)
 
 
 

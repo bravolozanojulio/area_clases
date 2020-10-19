@@ -17,4 +17,4 @@ También hemos utilizado las funciones:
 
 
                         
-Por último hemos aprendido el uso de expresiones regulares.
+Hemos utilizado control de errrores para interrumpir la ejecuciones y obtener un mensaje de error

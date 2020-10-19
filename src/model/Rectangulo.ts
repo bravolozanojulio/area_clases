@@ -1,6 +1,6 @@
 // Calcular el área de un rectángulo 
 
-class Rectangulo {
+export class Rectangulo {
     private base: number
     private altura: number
 
@@ -9,14 +9,19 @@ class Rectangulo {
         this.altura= altura
     }
 
-    getbase(){
+    getBase(){
         return this.base
     }
-    getaltura(){
+    getAltura(){
         return this.altura
     }
-    getarea(){
+    
+    Area(){
         let calculo= this.altura * this.base
+
+        if (isNaN(calculo) == true ){
+            throw "El calculo no se ha realizado correctamente"
+        }
 
 // A continuación, vamos a convertir el resultado a string con la funcion tostring(), para posteriormente,
 // utilizando la funcion match mostremos los caracteres que nos interesan, y mostraremos los decimales deseados.
@@ -29,6 +34,7 @@ class Rectangulo {
 // La función match compara nuestra cadena con una expresion regular para seleccionar los que deseeamos, en este caso,
 // queremos seleccionar todos los digitos antes del punto (delimitador), solo 2 digitos después del punto (delimitador).
 
+
         let resultado= calculo.toString()
         let decimales = /\d*.\d{0,2}/
         
@@ -36,8 +42,12 @@ class Rectangulo {
 
     }
 
-    getperi(){
+    Perimetro(){
         let calculo= 2*this.base*this.altura
+
+        if (isNaN(calculo) == true){
+            throw "El calculo no se ha realizado correctamente"
+        }
 
         let resultado= calculo.toString()
         let decimales = /\d*.\d{0,2}/
@@ -46,18 +56,6 @@ class Rectangulo {
     }
 }
 
-let r1: Rectangulo
-let r2: Rectangulo
-
-
-r1= new Rectangulo(6,5)
-r2= new Rectangulo(10,2)
-
-console.log(`\n El área del rectangulo 1 es ${r1.getarea()}`)
-console.log(`\n El área del rectangulo 2 es ${r2.getarea()}`)
-
-console.log(`\n El perimetro del rectangulo 1 es ${r1.getperi()}`)
-console.log(`\n El perimetro del rectangulo 2 es ${r2.getperi()}`)
 
 
 

@@ -15,11 +15,8 @@ También hemos utilizado las funciones:
 
                                         - Match: Selecciona la parte de una cadena comparando con una expresion regular.
 
-<<<<<<< HEAD
 
+Hemos utilizado control de errrores (throw y get cacth) para interrumpir la ejecuciones y obtener un mensaje de error
 
-                        
-Hemos utilizado control de errrores para interrumpir la ejecuciones y obtener un mensaje de error
-=======
 Por último hemos aprendido el uso de expresiones regulares.
->>>>>>> f6f11e1620361e2c039313f27706d2281ee8034a
+
